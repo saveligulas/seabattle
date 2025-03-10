@@ -4,11 +4,12 @@ import sagu.uni.seabattle.domain.ship.SetupShip;
 import sagu.uni.seabattle.domain.ship.Ship;
 import sagu.uni.seabattle.domain.ship.ShipPart;
 import sagu.uni.seabattle.domain.ship.ShipPartType;
+import sg.spring.core.domain.UUIDDomainIdentifier;
 
 import java.util.UUID;
 
 //TODO: implement this
-public class RectangleGameMap implements IGameMap {
+public class RectangleGameMap extends UUIDDomainIdentifier implements IGameMap {
     private final Tile[][] tiles;
 
 

@@ -1,13 +1,11 @@
 package sagu.uni.seabattle.persistence;
 
-import core.domain.IObjectInternalExternalIdentifier;
-import core.persistence.provider.neo4j.RelationshipPropertiesBase;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Target;
 import org.jspecify.annotations.Nullable;
 import org.springframework.data.neo4j.core.schema.RelationshipProperties;
 import org.springframework.data.neo4j.core.schema.TargetNode;
+import sg.spring.core.persistence.provider.neo4j.RelationshipPropertiesBase;
 
 import java.util.UUID;
 
@@ -20,25 +18,20 @@ public class PlayerMapRelation extends RelationshipPropertiesBase {
     @TargetNode
     private GameMapEntity gameMap;
 
-    public PlayerMapRelation(UUID uuid) {
-        super(uuid);
+    public PlayerMapRelation() {
     }
 
-    public PlayerMapRelation(IObjectInternalExternalIdentifier<UUID, String> identifier) {
-        super(identifier);
+    public PlayerMapRelation(UUID uuid) {
+        this(uuid, null);
     }
 
     public PlayerMapRelation(UUID uuid, @Nullable String elementId) {
         super(uuid, elementId);
     }
 
-    public PlayerMapRelation(UUID uuid, @Nullable String elementId, Long version) {
-        super(uuid, elementId, version);
+    public PlayerMapRelation(UUID uuid, @Nullable String elementId, String role, GameMapEntity gameMap) {
+        super(uuid, elementId);
+        this.role = role;
+        this.gameMap = gameMap;
     }
-
-    @Override
-    public boolean isDomainGenerated() {
-        return false;
-    }
-
 }

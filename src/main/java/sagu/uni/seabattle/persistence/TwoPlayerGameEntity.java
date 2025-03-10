@@ -1,12 +1,12 @@
 package sagu.uni.seabattle.persistence;
 
-import core.domain.UUIDModelIdentifier;
 import jakarta.persistence.PersistenceException;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Relationship;
 import sagu.uni.seabattle.domain.map.Vector2Int;
+import sg.spring.core.persistence.provider.neo4j.Neo4jNodeIdentifier;
 
 import java.util.List;
 import java.util.Set;
@@ -15,7 +15,7 @@ import java.util.UUID;
 @Node("TwoPlayerGame")
 @Getter
 @Setter
-public class TwoPlayerGameEntity extends UUIDModelIdentifier {
+public class TwoPlayerGameEntity extends Neo4jNodeIdentifier<UUID> {
     @Relationship(type = PlayerMapRelation.TYPE, direction = Relationship.Direction.INCOMING)
     private Set<PlayerMapRelation> players;
     private List<Integer> setupShipSizes;

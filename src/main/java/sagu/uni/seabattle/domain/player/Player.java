@@ -1,14 +1,14 @@
 package sagu.uni.seabattle.domain.player;
 
-import core.domain.UUIDModelIdentifier;
 import lombok.Getter;
 import lombok.Setter;
 import org.jspecify.annotations.Nullable;
 import sagu.uni.seabattle.domain.map.IGameMap;
+import sg.spring.core.domain.UUIDDomainIdentifier;
 
 @Getter
 @Setter
-public class Player extends UUIDModelIdentifier {
+public class Player extends UUIDDomainIdentifier {
     private final String id;
     @Nullable
     private IGameMap map;

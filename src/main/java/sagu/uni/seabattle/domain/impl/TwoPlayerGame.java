@@ -1,6 +1,5 @@
 package sagu.uni.seabattle.domain.impl;
 
-import core.domain.UUIDModelIdentifier;
 import sagu.uni.seabattle.domain.game.ActionResultType;
 import sagu.uni.seabattle.domain.game.GamePhase;
 import sagu.uni.seabattle.domain.game.IGame;
@@ -16,13 +15,14 @@ import sagu.uni.seabattle.domain.map.error.VectorOutOfBoundsException;
 import sagu.uni.seabattle.domain.player.Player;
 import sagu.uni.seabattle.domain.ship.SetupShip;
 import sagu.uni.seabattle.domain.ship.ShipPart;
+import sg.spring.core.domain.UUIDDomainIdentifier;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-public class TwoPlayerGame extends UUIDModelIdentifier implements IGame {
+public class TwoPlayerGame extends UUIDDomainIdentifier implements IGame {
     private final Player playerRed;
     private final Player playerBlue;
     private final List<Integer> setupShipSizes;
